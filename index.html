@@ -1,0 +1,480 @@
+<!doctype html>
+<html lang="pt-BR" data-theme="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Freitas Dev - especializado em React, Node.js e MySQL. E trabalho justamente com a parte difícil: arquitetar e construir sistemas que aguentam o peso de um negócio real"
+    />
+    <meta name="theme-color" content="#323297" />
+    <title>Dev Freitas - Desenvolvedor fullstack</title>
+
+    <!-- Preconnect for fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet" href="src/index.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=JetBrains+Mono:wght@300;400;500&family=DM+Sans:wght@300;400;500&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <!-- =============================================
+     NAVIGATION
+     ============================================= -->
+    <nav>
+      <div class="nav-logo">freitas<span>.</span>dev</div>
+
+      <ul class="nav-center">
+        <li><a href="#stack">// stack</a></li>
+        <li><a href="#projects">// projetos</a></li>
+        <li><a href="#experience">// exp</a></li>
+        <li><a href="#contact">// contato</a></li>
+      </ul>
+
+      <div class="nav-right">
+        <!-- DARK / LIGHT TOGGLE -->
+        <button class="theme-btn" id="themeToggle" aria-label="Alternar tema">
+          <span class="icon-sun" aria-hidden="true">
+            <svg
+              width="16"
+              height="16"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <circle cx="12" cy="12" r="5" />
+              <line x1="12" y1="1" x2="12" y2="3" />
+              <line x1="12" y1="21" x2="12" y2="23" />
+              <line x1="4.22" y1="4.22" x2="5.64" y2="5.64" />
+              <line x1="18.36" y1="18.36" x2="19.78" y2="19.78" />
+              <line x1="1" y1="12" x2="3" y2="12" />
+              <line x1="21" y1="12" x2="23" y2="12" />
+              <line x1="4.22" y1="19.78" x2="5.64" y2="18.36" />
+              <line x1="18.36" y1="5.64" x2="19.78" y2="4.22" />
+            </svg>
+          </span>
+          <span class="icon-moon" aria-hidden="true">
+            <svg
+              width="16"
+              height="16"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
+            </svg>
+          </span>
+        </button>
+
+        <button
+          class="nav-cta"
+          onclick="
+            document
+              .getElementById('contact')
+              .scrollIntoView({ behavior: 'smooth' })
+          "
+        >
+          Contato
+        </button>
+
+        <button
+          class="ham-btn"
+          id="hamBtn"
+          aria-label="Menu"
+          aria-expanded="false"
+        >
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </nav>
+
+    <!-- Mobile menu -->
+    <div
+      class="mobile-menu"
+      id="mobileMenu"
+      role="navigation"
+      aria-label="Menu móvel"
+    >
+      <a href="#stack" onclick="closeMobile()">// stack</a>
+      <a href="#projects" onclick="closeMobile()">// projetos</a>
+      <a href="#experience" onclick="closeMobile()">// exp</a>
+      <a href="#contact" onclick="closeMobile()">// contato</a>
+      <a
+        href="#contact"
+        onclick="closeMobile()"
+        style="color: var(--indigo-light)"
+        >→ Contato</a
+      >
+    </div>
+
+    <!-- =============================================
+     HERO
+     ============================================= -->
+    <section class="hero" id="hero">
+      <div class="grid-bg"></div>
+      <div class="hero-glow" aria-hidden="true"></div>
+      <div class="hero-glow2" aria-hidden="true"></div>
+
+      <div class="hero-content">
+        <!--<div class="hero-tag reveal"></div>-->
+
+        <h1 class="hero-name reveal reveal-d1">
+          <span class="highlight">Freitas</span><br />
+          <span class="ghost">Dev.</span>
+        </h1>
+
+        <p class="hero-desc reveal reveal-d2">
+          No mercado há 4 anos freelancer
+          <strong>desenvolvendo</strong> e
+          <strong>arquitetando sistemas</strong>. Fullstack em React, Node.js e
+          MySQL.
+        </p>
+
+        <div class="hero-actions reveal reveal-d3">
+          <button
+            class="btn-primary"
+            onclick="
+              document
+                .getElementById('projects')
+                .scrollIntoView({ behavior: 'smooth' })
+            "
+          >
+            Ver Projetos
+          </button>
+
+          <!-------------- BOTÃO DE CONTATO
+          <button
+            class="btn-ghost"
+            onclick="
+              document
+                .getElementById('contact')
+                .scrollIntoView({ behavior: 'smooth' })
+            "
+          >
+            Entre em contato →
+          </button>-->
+        </div>
+
+            <!------------------ COLOCAR NAS STACKS
+         <div class="stats-row reveal reveal-d4">
+          <div>
+            <div class="stat-num">4<span>+</span></div>
+            <div class="stat-label">anos de exp</div>
+          </div>
+          <div>
+            <div class="stat-num">32<span>+</span></div>
+            <div class="stat-label">projetos entregues</div>
+          </div>
+          <div>
+            <div class="stat-num">18<span>+</span></div>
+            <div class="stat-label">clientes satisfeitos</div>
+          </div>
+        </div>
+      </div>-->
+
+      <!---<div class="hero-scroll" aria-hidden="true">
+        <div class="scroll-line"></div>
+        scroll
+      </div>-->
+    </section>
+
+    <!-- =============================================
+     STACK
+     ============================================= -->
+    <section class="stack-section" id="stack">
+      <div class="section-inner">
+        <div class="section-label reveal">Tecnologias</div>
+        <h2 class="section-title reveal reveal-d1">Meu Stack</h2>
+        <div class="divider"></div>
+
+        <div class="stack-grid">
+          <div class="stack-card front reveal">
+            <div class="stack-icon" aria-hidden="true">⚛</div>
+            <div class="stack-cat">Frontend</div>
+            <div class="stack-card-title">React JS</div>
+            <p class="stack-desc">
+              Aplicações Web modernas de alta perfomance.
+            </p>
+            <div class="stack-tags">
+              <span class="tag">Next.js</span>
+              <span class="tag">TypeScript</span>
+              <span class="tag">Tailwind CSS</span>
+            </div>
+          </div>
+
+          <div class="stack-card back reveal reveal-d1">
+            <div class="stack-icon" aria-hidden="true">⬡</div>
+            <div class="stack-cat">Backend</div>
+            <div class="stack-card-title">Node.js &amp; APIs</div>
+            <p class="stack-desc">
+              APIs REST e GraphQL robustas, autenticação JWT e microsserviços.
+            </p>
+            <div class="stack-tags">
+              <span class="tag">Node.js</span>
+              <span class="tag">GraphQL</span>
+              <span class="tag">REST APIs</span>
+              <span class="tag">JWT</span>
+              <span class="tag">Autenticação</span>
+
+              <span class="tag">WebSockets</span>
+            </div>
+          </div>
+
+          <div class="stack-card db reveal reveal-d2">
+            <div class="stack-icon" aria-hidden="true">🗄</div>
+            <div class="stack-cat">Database &amp; Infra</div>
+            <div class="stack-card-title">Dados &amp; Deployment</div>
+            <p class="stack-desc">
+              Modelagem relacional, queries otimizadas e pipelines de CI/CD para
+              softwares com segurança.
+            </p>
+            <div class="stack-tags">
+              <span class="tag">MySQL</span>
+              <span class="tag">Docker</span>
+              <span class="tag">AWS</span>
+              <span class="tag">GitHub Actions</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =============================================
+     PROJECTS
+     ============================================= -->
+    <section class="projects-section" id="projects">
+      <div class="section-inner">
+        <div class="section-label reveal">Trabalhos Recentes</div>
+        <h2 class="section-title reveal reveal-d1">Projetos em Destaque</h2>
+        <div class="divider"></div>
+
+        <div class="projects-grid">
+          <article class="project-card reveal">
+            <div class="project-thumb pt1">
+              <div class="thumb-emoji" aria-hidden="true">🛒</div>
+              <span class="thumb-badge">E-commerce</span>
+              <span class="thumb-num" aria-hidden="true">01</span>
+            </div>
+            <div class="project-body">
+              <h3 class="project-title">ShopNova Platform</h3>
+              <p class="project-desc">
+                Plataforma de e-commerce completa com carrinho em tempo real,
+                painel admin, sistema de pedidos e gateway de pagamento
+                integrado.
+              </p>
+              <div class="project-stack">
+                <span class="ptag pt-react">React</span>
+                <span class="ptag pt-node">Node.js</span>
+                <span class="ptag pt-mysql">MySQL</span>
+                <span class="ptag pt-other">TypeScript</span>
+              </div>
+            </div>
+          </article>
+
+          <!--<article class="project-card reveal reveal-d1">
+            <div class="project-thumb pt2">
+              <div class="thumb-emoji" aria-hidden="true">📊</div>
+              <span class="thumb-badge">SaaS</span>
+              <span class="thumb-num" aria-hidden="true">02</span>
+            </div>
+            <div class="project-body">
+              <h3 class="project-title">AnalyticsPulse</h3>
+              <p class="project-desc">
+                Dashboard analítico em tempo real com visualização de dados,
+                relatórios customizáveis e exportação PDF/Excel para equipes de
+                marketing.
+              </p>
+              <div class="project-stack">
+                <span class="ptag pt-react">Next.js</span>
+                <span class="ptag pt-node">Fastify</span>
+                <span class="ptag pt-mysql">MySQL</span>
+                <span class="ptag pt-other">Recharts</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="project-card reveal reveal-d2">
+            <div class="project-thumb pt3">
+              <div class="thumb-emoji" aria-hidden="true">💬</div>
+              <span class="thumb-badge">Real-time</span>
+              <span class="thumb-num" aria-hidden="true">03</span>
+            </div>
+            <div class="project-body">
+              <h3 class="project-title">ChatCore API</h3>
+              <p class="project-desc">
+                Sistema de chat em tempo real com WebSockets, salas privadas,
+                histórico persistente e notificações push. Suporta até 10k
+                usuários simultâneos.
+              </p>
+              <div class="project-stack">
+                <span class="ptag pt-react">React</span>
+                <span class="ptag pt-node">Node.js</span>
+                <span class="ptag pt-node">Socket.io</span>
+                <span class="ptag pt-mysql">Redis</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="project-card reveal reveal-d3">
+            <div class="project-thumb pt4">
+              <div class="thumb-emoji" aria-hidden="true">🤖</div>
+              <span class="thumb-badge">AI</span>
+              <span class="thumb-num" aria-hidden="true">04</span>
+            </div>
+            <div class="project-body">
+              <h3 class="project-title">AutoContent Studio</h3>
+              <p class="project-desc">
+                Ferramenta de automação de conteúdo com integração de LLMs,
+                geração de posts para redes sociais, agendamento e painel de
+                performance.
+              </p>
+              <div class="project-stack">
+                <span class="ptag pt-react">Next.js</span>
+                <span class="ptag pt-node">Node.js</span>
+                <span class="ptag pt-mysql">MySQL</span>
+                <span class="ptag pt-other">OpenAI API</span>
+              </div>
+            </div>
+          </article>-->
+        </div>
+      </div>
+    </section>
+
+    <!-- =============================================
+     EXPERIENCE
+     ============================================= -->
+    <section class="experience-section" id="experience">
+      <div class="section-inner">
+        <div class="section-label reveal">Trajetória</div>
+        <h2 class="section-title reveal reveal-d1">Experiência</h2>
+        <div class="divider"></div>
+
+        <div class="timeline">
+          <div class="timeline-item reveal">
+            <div class="timeline-dot"></div>
+            <div class="timeline-date">2019 — Presente</div>
+            <div class="timeline-role">Fullstack Developer</div>
+            <div class="timeline-company">Freelancer / Agência Digital</div>
+            <p class="timeline-desc">
+              Desenvolvimento de plataformas SaaS e e-commerces de alta
+              performance para clientes nacionais e internacionais. Liderança
+              técnica em projetos com React + Node.js.
+            </p>
+          </div>
+          <!----<div class="timeline-item reveal reveal-d1">
+            <div class="timeline-dot"></div>
+            <div class="timeline-date">2021 — 2023</div>
+            <div class="timeline-role">Fullstack Developer</div>
+            <div class="timeline-company">TechCo Solutions</div>
+            <p class="timeline-desc">
+              Construção de APIs RESTful e dashboards internos. Migração de
+              sistemas legados para arquitetura moderna com React e Node.js.
+              Reduziu tempo de carregamento em 60%.
+            </p>
+          </div>
+          <div class="timeline-item reveal reveal-d2">
+            <div class="timeline-dot"></div>
+            <div class="timeline-date">2020 — 2021</div>
+            <div class="timeline-role">Frontend Developer Jr.</div>
+            <div class="timeline-company">StartupHub</div>
+            <p class="timeline-desc">
+              Desenvolvimento de interfaces com React, integração de APIs e
+              colaboração em projetos ágeis com ciclos de entrega curtos e foco
+              em qualidade de código.
+            </p>
+          </div>
+        </div>
+      </div>-->
+    </section>
+
+    <!-- =============================================
+     CONTACT
+     ============================================= -->
+    <section class="contact-section" id="contact">
+      <div class="section-inner">
+        <div class="contact-inner">
+          <div class="section-label reveal" style="justify-content: center">
+            Contato
+          </div>
+          <h2 class="section-title reveal reveal-d1">
+            Vamos construir<br />algo juntos?
+          </h2>
+          <p class="contact-sub reveal reveal-d2">
+            Aberto a projetos freelance, oportunidades CLT e parcerias
+            estratégicas. Se você tem uma ideia ou um problema para resolver, me
+            conta.
+          </p>
+          <div class="contact-links reveal reveal-d3">
+            <a href="mailto:ylfernando3@gmail.com" class="clink cl-primary">
+              <svg
+                width="14"
+                height="14"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                aria-hidden="true"
+              >
+                <path
+                  d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"
+                />
+                <polyline points="22,6 12,13 2,6" />
+              </svg>
+              ylfernando3@gmail.com
+            </a>
+            <a
+              href="https://github.com"
+              target="_blank"
+              rel="noopener"
+              class="clink cl-ghost"
+            >
+              GitHub →
+            </a>
+            <a
+              href="https://linkedin.com"
+              target="_blank"
+              rel="noopener"
+              class="clink cl-ghost"
+            >
+              LinkedIn →
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Back to top -->
+    <button class="back-to-top" id="backToTop" aria-label="Voltar ao início">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <polyline points="18 15 12 9 6 15" />
+      </svg>
+    </button>
+
+    <!-- =============================================
+     FOOTER
+     ============================================= -->
+    <footer>
+      <span class="footer-copy"
+        >© 2026 Freitas Dev · Fullstack Developer</span
+      >
+      <span class="footer-status">
+        <span class="status-dot" aria-hidden="true"></span>
+        Disponível para projetos
+      </span>
+    </footer>
+
+    <!-- =============================================
+     JAVASCRIPT — minimal, no dependencies
+     ============================================= -->
+    <script src="src/index.js" >
+    </script>
+  </body>
+</html>
